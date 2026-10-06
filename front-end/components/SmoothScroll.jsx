@@ -12,7 +12,7 @@ export default function SmoothScroll({ children }) {
 
     // Initialize Lenis smooth scrolling with signature luxury curve
     const lenis = new Lenis({
-      duration: 1.25,
+      duration: 1.15,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: "vertical",
       gestureOrientation: "vertical",

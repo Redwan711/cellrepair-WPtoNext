@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero";
 import StoreLocation from "@/components/StoreLocation";
+import RepairIssues from "@/components/RepairIssues";
 import React from "react";
 
 const Home = () => {
@@ -7,6 +8,7 @@ const Home = () => {
     <main>
       <Hero />
       <StoreLocation />
+      <RepairIssues />
     </main>
   );
 };
