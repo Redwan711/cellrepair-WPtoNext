@@ -41,7 +41,7 @@ export default function Header() {
       );
     }, header);
 
-    const onScroll = () => setScrolled(window.scrollY > 12);
+    const onScroll = () => setScrolled(window.scrollY > 36);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
 
@@ -66,7 +66,8 @@ export default function Header() {
   const closeMenu = () => setMenuOpen(false);
 
   return (
-    <div ref={headerRef} className={`site-header${scrolled ? " site-header--scrolled" : ""}`}>
+    <>
+      {/* Top Promo Banner - Scrolls away naturally */}
       <div className="header-promo">
         <div className="header-container container mx-auto header-promo__inner">
           <a className="header-promo__phone" href="tel:+16195139994" data-header-animate>
@@ -80,49 +81,57 @@ export default function Header() {
         </div>
       </div>
 
-      <div className="header-main">
-        <div className="header-container container mx-auto header-main__inner">
-          <Link href="/" className="header-logo" aria-label="Cell Repair home" data-header-animate onClick={closeMenu}>
-            <Image src="/cell-repair-01.png" alt="Cell Repair" width={198} height={90} priority />
-          </Link>
+      {/* Main Nav Header - Sticky on top & becomes thinner when sticky */}
+      <header
+        ref={headerRef}
+        className={`site-header sticky top-0 z-50 w-full transition-all duration-300 ${
+          scrolled ? "site-header--scrolled" : ""
+        }`}
+      >
+        <div className="header-main">
+          <div className="header-container container mx-auto header-main__inner">
+            <Link href="/" className="header-logo" aria-label="Cell Repair home" data-header-animate onClick={closeMenu}>
+              <Image src="/cell-repair-01.png" alt="Cell Repair" width={198} height={90} priority />
+            </Link>
 
-          <button
-            type="button"
-            className={`header-menu-toggle${menuOpen ? " is-open" : ""}`}
-            aria-expanded={menuOpen}
-            aria-controls="primary-navigation"
-            onClick={() => setMenuOpen((open) => !open)}
-          >
-            <span className="sr-only">{menuOpen ? "Close menu" : "Open menu"}</span>
-            <span />
-            <span />
-            <span />
-          </button>
+            <button
+              type="button"
+              className={`header-menu-toggle${menuOpen ? " is-open" : ""}`}
+              aria-expanded={menuOpen}
+              aria-controls="primary-navigation"
+              onClick={() => setMenuOpen((open) => !open)}
+            >
+              <span className="sr-only">{menuOpen ? "Close menu" : "Open menu"}</span>
+              <span />
+              <span />
+              <span />
+            </button>
 
-          <nav
-            ref={navRef}
-            id="primary-navigation"
-            className={`header-nav${menuOpen ? " is-open" : ""}`}
-            aria-label="Primary navigation"
-          >
-            <ul>
-              {navItems.map((item) => (
-                <li key={item.href}>
-                  <Link href={item.href} onClick={closeMenu}>
-                    {item.label}
+            <nav
+              ref={navRef}
+              id="primary-navigation"
+              className={`header-nav${menuOpen ? " is-open" : ""}`}
+              aria-label="Primary navigation"
+            >
+              <ul>
+                {navItems.map((item) => (
+                  <li key={item.href}>
+                    <Link href={item.href} onClick={closeMenu}>
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+                <li className="header-nav__mobile-cta">
+                  <Link href="/book-a-place" className="header-cta" onClick={closeMenu}>
+                    Get a repair quote <span aria-hidden="true">↗</span>
                   </Link>
                 </li>
-              ))}
-              <li className="header-nav__mobile-cta">
-                <Link href="/book-a-place" className="header-cta" onClick={closeMenu}>
-                  Get a repair quote <span aria-hidden="true">↗</span>
-                </Link>
-              </li>
-            </ul>
-          </nav>
+              </ul>
+            </nav>
 
+          </div>
         </div>
-      </div>
-    </div>
+      </header>
+    </>
   );
 }
