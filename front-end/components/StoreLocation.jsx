@@ -170,7 +170,7 @@ export default function StoreLocation() {
             className="lg:col-span-7 flex flex-col bg-white rounded-3xl border border-black/[0.08] shadow-[0_4px_24px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.06)] transition-shadow duration-300 overflow-hidden"
           >
             {/* View Switcher Header */}
-            <div className="flex items-center justify-between p-5 border-b border-black/[0.06]">
+            <div className="flex flex-wrap items-center justify-between p-4 sm:p-5 gap-3 border-b border-black/[0.06]">
               <div className="flex items-center gap-2">
                 <span className="text-sm font-semibold text-neutral-900">
                   Otay Ranch Mall
@@ -407,7 +407,7 @@ export default function StoreLocation() {
               </div>
 
               {/* Perks Row */}
-              <div className="mt-5 pt-4 border-t border-black/[0.06] flex items-center justify-between text-xs text-neutral-500">
+              <div className="mt-5 pt-4 border-t border-black/[0.06] flex flex-wrap items-center justify-between gap-2 text-xs text-neutral-500">
                 <span>⚡ 30-Min Fast Turnaround</span>
                 <span>•</span>
                 <span>🅿️ Free Mall Parking</span>

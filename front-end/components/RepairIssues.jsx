@@ -245,17 +245,17 @@ export default function RepairIssues() {
               </p>
             </div>
 
-            <div className="flex flex-wrap items-center gap-4 shrink-0">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-4 shrink-0 w-full lg:w-auto">
               <Link
                 href="/book-a-place"
-                className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-sm font-semibold text-white bg-[#f11d4b] hover:bg-[#c90f38] transition-all duration-200 shadow-lg shadow-[#f11d4b]/25 hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full text-sm font-semibold text-white bg-[#f11d4b] hover:bg-[#c90f38] transition-all duration-200 shadow-lg shadow-[#f11d4b]/25 hover:-translate-y-0.5 text-center"
               >
                 Get a Quote Now
                 <span aria-hidden="true">↗</span>
               </Link>
               <a
                 href="tel:+16195139994"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-sm font-semibold text-neutral-300 bg-white/10 hover:bg-white/15 border border-white/10 transition-all duration-200 hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full text-sm font-semibold text-neutral-300 bg-white/10 hover:bg-white/15 border border-white/10 transition-all duration-200 hover:-translate-y-0.5 text-center"
               >
                 Call: +1 (619) 513-9994
               </a>
